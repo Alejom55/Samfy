@@ -33,8 +33,8 @@ export class ManageAccount {
       })
       .catch((error) => {
         console.error(error.message);
-            // Mostrar alerta de error de registro
-            alert("Error al registrar: " + error.message);
+        // Mostrar alerta de error de registro
+        alert("Error al registrar: " + error.message);
       });
   }
 
@@ -45,8 +45,8 @@ export class ManageAccount {
       })
       .catch((error) => {
         console.error(error.message);
-                // Mostrar alerta de error de inicio de sesión
-                alert("Error al iniciar sesión: " + error.message);
+        // Mostrar alerta de error de inicio de sesión
+        alert("Error al iniciar sesión: " + error.message);
       });
   }
 
@@ -62,7 +62,7 @@ export class ManageAccount {
   async addData(user) {
     const userDocRef = doc(db, "users", user.email);
     await setDoc(userDocRef, user);
-}
+  }
 }
 
 
