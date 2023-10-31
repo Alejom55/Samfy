@@ -1,11 +1,16 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-analytics.js";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
+import {
+  doc,
+  updateDoc,
+  collection,
+  getDocs,
+  setDoc,
+  query,
+  where,
+  getFirestore,
+} from "https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore.js";
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyASPm-tyYm-WGHIpLTfpVjZAmzeS-OpeM4",
   authDomain: "samfi-15d53.firebaseapp.com",
@@ -16,6 +21,48 @@ const firebaseConfig = {
   measurementId: "G-SDQ3C7DRYB"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const db = getFirestore(app);
+const auth = getAuth(app);
+
+export class ManageAccount {
+  register(email, password, user) {
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((_) => {
+        window.location.href = "/login";
+      })
+      .catch((error) => {
+        console.error(error.message);
+            // Mostrar alerta de error de registro
+            alert("Error al registrar: " + error.message);
+      });
+  }
+
+  authenticate(email, password) {
+    signInWithEmailAndPassword(auth, email, password)
+      .then((_) => {
+        window.location.href = "/";
+      })
+      .catch((error) => {
+        console.error(error.message);
+                // Mostrar alerta de error de inicio de sesión
+                alert("Error al iniciar sesión: " + error.message);
+      });
+  }
+
+  signOut() {
+    signOut(auth)
+      .then((_) => {
+        window.location.href = "/";
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
+  }
+  async addData(user) {
+    const userDocRef = doc(db, "users", user.email);
+    await setDoc(userDocRef, user);
+}
+}
+
+
