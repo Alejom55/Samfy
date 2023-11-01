@@ -1,8 +1,6 @@
 import { ManageAccount } from './firebase-auth.js';
 // import {swal} from 'https://unpkg.com/sweetalert/dist/sweetalert.min.js';
 
-
-
 document.getElementById("formulario-register").addEventListener("submit", (event) => {
     event.preventDefault();
 
@@ -19,10 +17,12 @@ document.getElementById("formulario-register").addEventListener("submit", (event
     if(checkbox.checked === true){
         const account = new ManageAccount();
         account.register(email, password);
-        console.log(account.addData(user))
     }else{
-        console.log("Hola")
-        swal("Hello world!");
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Acepta los terminos y condiciones',
+          })
     }
 
     
