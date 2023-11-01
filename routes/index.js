@@ -24,4 +24,8 @@ router.get('/add_property', function(req, res, next) {
 router.get('/property_detail', function(req, res, next) {
   res.render('property_detail', { title: 'Express' });
 });
+
+router.get('/properties', function(req, res, next) {
+  res.render('properties', { title: 'Express' });
+});
 module.exports = router;
