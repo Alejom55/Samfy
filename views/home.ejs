@@ -20,6 +20,28 @@
   <!-- CSS Files -->
   <link id="pagestyle" href="/css/soft-ui-dashboard.css" rel="stylesheet" />
 </head>
+<style>
+  /* Style the container to be horizontal */
+  .swiper-container {
+    width: 100%; /* Set the width to 100% of its parent container */
+    z-index: 1000; 
+  }
+
+  /* Style the wrapper to hold the slides */
+  .swiper-wrapper {
+    display: flex; /* Make the wrapper a flex container */
+    flex-direction: row; /* Arrange the slides horizontally */
+    padding: 10px; /* Adjust padding as needed */
+  }
+
+  /* Style individual slides */
+  .swiper-slide {
+    flex: 0 0 auto; /* Prevent the slides from stretching */
+    margin-right: 10px; /* Add spacing between slides */
+  }
+
+</style>
+
 
 <body class="g-sidenav-show  bg-gray-100">
   <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
@@ -164,7 +186,7 @@
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
             <div class="input-group">
               <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-              <input type="text" class="form-control" placeholder="Type here...">
+              <input type="text" class="form-control" placeholder="Buscar...">
             </div>
           </div>
           <ul class="navbar-nav  justify-content-end">
@@ -279,7 +301,7 @@
         </div>
       </div>
       <div class="row">
-      <div class="swiper-container" >
+      <div class="swiper-container">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <a href="https://www.elcolombiano.com/negocios/finca-raiz-colombia-busca-atraer-inversion-del-extranjero-LB22455428"><img src="/img/fincaraiz.png" alt="" style="height: 200px;"></a>
@@ -293,10 +315,16 @@
           <div class="swiper-slide">
             <a href="https://www.elcolombiano.com/medellin/gentrificacion-en-medellin-amenaza-cierre-restaurantes-en-el-poblado-IH22438303"><img src="/img/baobei.png" alt="" style="height: 200px;"></a>
           </div>
+          <div class="swiper-slide">
+            <a href="https://www.elcolombiano.com/negocios/hogares-han-renunciado-a-comprar-casa-el-sector-busca-estrategias-para-salir-de-la-crisis-LF22720478"><img src="/img/hogares.png" alt="" style="height: 200px;"></a>
+          </div>
+          <div class="swiper-slide">
+            <a href="https://www.elcolombiano.com/negocios/medellin-entre-los-sitios-donde-es-mas-dificil-comprar-casa-DA22116647"><img src="/img/dificil.png" alt="" style="height: 200px;"></a>
+          </div>
           <div class="swiper-button-next"></div>
           <div class="swiper-button-prev"></div>
         </div>
-    </div>   
+      </div>   
       </div>
       <div class="row mt-4">
         <div class="col-lg-5 mb-lg-0 mb-4">
@@ -823,8 +851,8 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script>
     const swiper = new Swiper(".swiper-container", {
-  slidesPerView: 2,
-  slidesPerGroup: 1,
+  slidesPerView: auto,
+  slidesPerGroup: 10,
   centeredSlides: true,
   loop: true,
   navigation: {
