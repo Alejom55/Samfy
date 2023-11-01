@@ -11,7 +11,7 @@ import {
   getFirestore,
 } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore.js";
 
-// import {swal} from 'https://unpkg.com/sweetalert/dist/sweetalert.min.js'
+
 const firebaseConfig = {
   apiKey: "AIzaSyASPm-tyYm-WGHIpLTfpVjZAmzeS-OpeM4",
   authDomain: "samfi-15d53.firebaseapp.com",
