@@ -121,7 +121,7 @@ router.get('/property_detail', function(req, res, next) {
   res.render('property_detail', { title: 'Express' });
 });
 
-router.get('/properties', function(req, res, next) {
-  res.render('properties', homes);
+router.get('/properties_list', function(req, res, next) {
+  res.render('properties_list', homes);
 });
 module.exports = router;
