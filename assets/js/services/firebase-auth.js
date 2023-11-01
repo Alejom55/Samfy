@@ -11,6 +11,7 @@ import {
   getFirestore,
 } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore.js";
 
+import {swal} from 'https://unpkg.com/sweetalert/dist/sweetalert.min.js'
 const firebaseConfig = {
   apiKey: "AIzaSyASPm-tyYm-WGHIpLTfpVjZAmzeS-OpeM4",
   authDomain: "samfi-15d53.firebaseapp.com",
@@ -26,38 +27,39 @@ const db = getFirestore(app);
 const auth = getAuth(app);
 
 export class ManageAccount {
-  register(email, password, user) {
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((_) => {
-        window.location.href = "/login";
-      })
-      .catch((error) => {
-        console.error(error.message);
-        // Mostrar alerta de error de registro
-        alert("Error al registrar: " + error.message);
-      });
+  async register(email, password) {
+    try {
+      await createUserWithEmailAndPassword(auth, email, password)
+      swal("Good job!", "You clicked the button!", "success");
+      // window.location.href = "/login";
+    }
+    catch (error) {
+      console.error(error.message);
+      // Mostrar alerta de error de registro
+      alert("Error al registrar: " + error.message);
+    };
   }
 
-  authenticate(email, password) {
-    signInWithEmailAndPassword(auth, email, password)
-      .then((_) => {
-        window.location.href = "/";
-      })
-      .catch((error) => {
-        console.error(error.message);
-        // Mostrar alerta de error de inicio de sesión
-        alert("Error al iniciar sesión: " + error.message);
-      });
+  async authenticate(email, password) {
+    try {
+      await signInWithEmailAndPassword(auth, email, password)
+      window.location.href = "/";
+
+    } catch (error) {
+      console.error(error.message);
+      // Mostrar alerta de error de inicio de sesión
+      alert("Error al iniciar sesión: " + error.message);
+    };
   }
 
-  signOut() {
-    signOut(auth)
-      .then((_) => {
-        window.location.href = "/";
-      })
-      .catch((error) => {
-        console.error(error.message);
-      });
+  async signOut() {
+    try {
+      signOut(auth)
+      window.location.href = "/";
+    }
+    catch (error) {
+      console.error(error.message);
+    };
   }
   async addData(user) {
     const userDocRef = doc(db, "users", user.email);

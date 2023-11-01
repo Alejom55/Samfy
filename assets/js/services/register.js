@@ -1,6 +1,7 @@
 import { ManageAccount } from './firebase-auth.js';
 //import { ManageAccount } from './prueba.js';
 
+
 document.getElementById("formulario-register").addEventListener("submit", (event) => {
     event.preventDefault();
 
@@ -16,6 +17,6 @@ document.getElementById("formulario-register").addEventListener("submit", (event
 
     const account = new ManageAccount();
     account.register(email, password);
-    account.addData(user);
-
+    console.log(account.addData(user))
+    
 });
