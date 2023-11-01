@@ -1,5 +1,6 @@
 import { ManageAccount } from './firebase-auth.js';
-//import { ManageAccount } from './prueba.js';
+// import {swal} from 'https://unpkg.com/sweetalert/dist/sweetalert.min.js';
+
 
 
 document.getElementById("formulario-register").addEventListener("submit", (event) => {
@@ -8,15 +9,21 @@ document.getElementById("formulario-register").addEventListener("submit", (event
     const fullName = document.getElementById("Name").value;
     const email = document.getElementById("Email").value;
     const password = document.getElementById("Password").value;
+    const checkbox = document.getElementById("flexCheckDefault")
 
     const user = {
         name: fullName,
         email: email,
         password: password
     }
+    if(checkbox.checked === true){
+        const account = new ManageAccount();
+        account.register(email, password);
+        console.log(account.addData(user))
+    }else{
+        console.log("Hola")
+        swal("Hello world!");
+    }
 
-    const account = new ManageAccount();
-    account.register(email, password);
-    console.log(account.addData(user))
     
 });
