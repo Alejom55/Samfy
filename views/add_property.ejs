@@ -27,13 +27,11 @@
         <div class="sidenav-header">
             <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
                 aria-hidden="true" id="iconSidenav"></i>
-            <a class="navbar-brand m-0"
-                href="/">
-                
+            <a class="navbar-brand m-0" href="/">
                 <img src="/img/logo-negro.png" class="navbar-brand-img h-100" alt="main_logo">
                 SAMFI
             </a>
-            
+
         </div>
         <hr class="horizontal dark mt-0">
         <div class="collapse navbar-collapse  w-auto h-auto" id="sidenav-collapse-main">
@@ -112,15 +110,15 @@
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link  active " data-bs-toggle="collapse" aria-expanded="false"
+                                <a class="nav-link   " data-bs-toggle="collapse" aria-expanded="false"
                                     href="#productsExample">
                                     <span class="sidenav-mini-icon"> P </span>
                                     <span class="sidenav-normal"> Tus Productos <b class="caret"></b></span>
                                 </a>
                                 <div class="collapse show" id="productsExample">
                                     <ul class="nav nav-sm flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link " href="/add_property">
+                                        <li class="nav-item active">
+                                            <a class="nav-link active" href="/add_property">
                                                 <span class="sidenav-mini-icon text-xs"> A </span>
                                                 <span class="sidenav-normal"> Agregar inmueble </span>
                                             </a>
@@ -129,6 +127,12 @@
                                             <a class="nav-link " href="/property_detail">
                                                 <span class="sidenav-mini-icon text-xs"> D</span>
                                                 <span class="sidenav-normal"> Detalle inmueble </span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link " href="/properties_list">
+                                                <span class="sidenav-mini-icon text-xs"> P </span>
+                                                <span class="sidenav-normal"> Lista Inmuebles</span>
                                             </a>
                                         </li>
                                     </ul>
@@ -148,10 +152,10 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
                         <li class="breadcrumb-item text-sm">
-                            <a class="opacity-3 text-dark" href="javascript:;">
+                            <a class="opacity-3 text-dark" href="/">
                                 <svg width="12px" height="12px" class="mb-1" viewBox="0 0 45 40" version="1.1"
                                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                    <title>shop </title>
+                                    <title>shop</title>
                                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                         <g transform="translate(-1716.000000, -439.000000)" fill="#252f40"
                                             fill-rule="nonzero">
@@ -170,8 +174,8 @@
                                 </svg>
                             </a>
                         </li>
-                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark"
-                                href="javascript:;">Inmuebles</a></li>
+                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark">Inmuebles</a></li>
+                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark">Tus Productos</a></li>
                         <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Nuevo inmueble</li>
                     </ol>
                     <h6 class="font-weight-bolder mb-0">Publicar inmueble</h6>
@@ -195,8 +199,7 @@
                     </div>
                     <ul class="navbar-nav  justify-content-end">
                         <li class="nav-item d-flex align-items-center">
-                            <a href="/login"
-                                class="nav-link text-body font-weight-bold px-0" target="_blank">
+                            <a href="/login" class="nav-link text-body font-weight-bold px-0" target="_blank">
                                 <i class="fa fa-user me-sm-1"></i>
                                 <span class="d-sm-inline d-none">Iniciar sesión</span>
                             </a>
@@ -404,17 +407,14 @@
                                 <h5 class="font-weight-bolder">Facturación</h5>
                                 <div class="col-3">
                                     <label>Precio</label>
-                                    <input class="form-control" type="number" value="99.00" />
+                                    <input class="form-control" type="number" placeholder="0" />
                                 </div>
                                 <div class="col-4">
                                     <label>Moneda</label>
                                     <select class="form-control" name="choices-sizes" id="choices-currency-edit">
-                                        <option value="Choice 1" selected="">USD</option>
-                                        <option value="Choice 2">EUR</option>
-                                        <option value="Choice 3">GBP</option>
-                                        <option value="Choice 4">CNY</option>
-                                        <option value="Choice 5">INR</option>
-                                        <option value="Choice 6">BTC</option>
+                                        <option value="Choice 1" selected="">COL</option>
+                                        <option value="Choice 2">USD</option>
+                                        <option value="Choice 3">BTC</option>
                                     </select>
                                 </div>
                                 <div class="col-5">
@@ -437,44 +437,56 @@
                     </div>
                 </div>
             </div>
-            <footer class="footer pt-3  ">
-                <div class="container-fluid">
-                    <div class="row align-items-center justify-content-lg-between">
-                        <div class="col-lg-6 mb-lg-0 mb-4">
-                            <div class="copyright text-center text-sm text-muted text-lg-start">
-                                ©
-                                <script>
-                                    document.write(new Date().getFullYear())
-                                </script>,
-                                made with <i class="fa fa-heart"></i> by
-                                <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative
-                                    Tim</a>
-                                for a better web.
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                                <li class="nav-item">
-                                    <a href="https://www.creative-tim.com" class="nav-link text-muted"
-                                        target="_blank">Creative Tim</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted"
-                                        target="_blank">About Us</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="https://www.creative-tim.com/blog" class="nav-link text-muted"
-                                        target="_blank">Blog</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted"
-                                        target="_blank">License</a>
-                                </li>
-                            </ul>
-                        </div>
+            <footer class="footer py-5">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-8 mb-4 mx-auto text-center">
+                      <a href="javascript:;" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
+                        Nuestra misión
+                      </a>
+                      <a href="javascript:;" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
+                        Acerca de nosotros
+                      </a>
+                      <a href="javascript:;" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
+                        Nuestro equipo
+                      </a>
+                      <a href="javascript:;" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
+                        Inmuebles
+                      </a>
+                      <a href="javascript:;" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
+                        Facturación
+                      </a>
                     </div>
+                    <div class="col-lg-8 mx-auto text-center mb-4 mt-2">
+                      <a href="javascript:;" target="_blank" class="text-secondary me-xl-4 me-4">
+                        <span class="text-lg fab fa-dribbble"></span>
+                      </a>
+                      <a href="javascript:;" target="_blank" class="text-secondary me-xl-4 me-4">
+                        <span class="text-lg fab fa-twitter"></span>
+                      </a>
+                      <a href="javascript:;" target="_blank" class="text-secondary me-xl-4 me-4">
+                        <span class="text-lg fab fa-instagram"></span>
+                      </a>
+                      <a href="javascript:;" target="_blank" class="text-secondary me-xl-4 me-4">
+                        <span class="text-lg fab fa-pinterest"></span>
+                      </a>
+                      <a href="javascript:;" target="_blank" class="text-secondary me-xl-4 me-4">
+                        <span class="text-lg fab fa-github"></span>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 mx-auto text-center mt-1">
+                      <p class="mb-0 text-secondary">
+                        Copyright ©
+                        <script>
+                          document.write(new Date().getFullYear())
+                        </script> Samfi.
+                      </p>
+                    </div>
+                  </div>
                 </div>
-            </footer>
+              </footer>
         </div>
     </main>
     <div class="fixed-plugin">
