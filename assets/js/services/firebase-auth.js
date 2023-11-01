@@ -11,7 +11,7 @@ import {
   getFirestore,
 } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore.js";
 
-import {swal} from 'https://unpkg.com/sweetalert/dist/sweetalert.min.js'
+// import {swal} from 'https://unpkg.com/sweetalert/dist/sweetalert.min.js'
 const firebaseConfig = {
   apiKey: "AIzaSyASPm-tyYm-WGHIpLTfpVjZAmzeS-OpeM4",
   authDomain: "samfi-15d53.firebaseapp.com",
@@ -30,8 +30,8 @@ export class ManageAccount {
   async register(email, password) {
     try {
       await createUserWithEmailAndPassword(auth, email, password)
-      swal("Good job!", "You clicked the button!", "success");
-      // window.location.href = "/login";
+      // swal("Good job!", "You clicked the button!", "success");
+      window.location.href = "/login";
     }
     catch (error) {
       console.error(error.message);
