@@ -268,23 +268,17 @@
                 <div class="card px-4">
                   <div class="card-header">
                     <div class="row">
-                      <h5 class="col-sm-9 mb-0">Clientes</h5>
+                      <h5 class="col-sm-9 mb-0">Proyectos Disponibles</h5>
                       <div class="col-sm-2">
-                        <div class="form-check form-switch ms-auto">
-                          <label>
-                            Usuarios inactivos
-                            <input class="form-check-input" type="checkbox" id="toggle">
-                          </label>
-                        </div>
                       </div>
                       <div class="col-sm-1">
-                        <a href="/third-party/customer" class="btn btn-icon bg-gradient-primary">
+                        <a href="/add_property" class="btn btn-icon bg-gradient-primary">
                           <i class="fa-solid fa-plus me-1"></i>Nuevo
                         </a>
                       </div>
                     </div>
                     <p class="text-sm mb-0">
-                      Encuentre aquí el listado de los clientes actuales.
+                      Encuentre aquí el listado de los inmuebles disponibles.
                     </p>
                     
                   </div>
@@ -292,39 +286,124 @@
                     <table class="table table-flush" id="datatable-search">
                       <thead class="thead-light">
                         <tr>
-                          <th style="padding-left: 2rem;">Nombre</th>
-                          <th>Telefono</th>
-                          <th>Estado</th>
-                          <th>Acciones</th>
+                          <th style="padding-left: 2rem;">Comuna</th>
+                          <th>Barrio</th>
+                          <th>Nombre</th>
+                          <th>Area</th>
+                          <th>Habitaciones</th>
+                          <th>Baños</th>
+                          <th>Precio</th>
                         </tr>
                       </thead>
-                      <!-- <tbody>
-                        <form action="/investor-edit" method="POST">
-                        <% //customer.forEach(function(customer) { %>
+                        <tbody>
+                        <% var homes = [
+                        {
+                          "comuna": "Aranjuez",
+                          "barrio": "Santa Lucía",
+                          "area": 90,
+                          "habitaciones": 3,
+                          "baños": 2,
+                          "precio": 260000000,
+                          "urbanizacion": "Villa Santa Lucía"
+                        },
+                        {
+                          "comuna": "Laureles - Estadio",
+                          "barrio": "Conquistadores",
+                          "area": 120,
+                          "habitaciones": 4,
+                          "baños": 3,
+                          "precio": 400000000,
+                          "urbanizacion": "Conquistadores Residencial"
+                        },
+                        {
+                          "comuna": "El Poblado",
+                          "barrio": "El Tesoro",
+                          "area": 150,
+                          "habitaciones": 5,
+                          "baños": 4,
+                          "precio": 600000000,
+                          "urbanizacion": "Tesoro Heights"
+                        },
+                        {
+                          "comuna": "Belén",
+                          "barrio": "Las Playas",
+                          "area": 80,
+                          "habitaciones": 3,
+                          "baños": 2,
+                          "precio": 230000000,
+                          "urbanizacion": "Playa Verde"
+                        },
+                        {
+                          "comuna": "Manrique",
+                          "barrio": "Manrique Central",
+                          "area": 75,
+                          "habitaciones": 2,
+                          "baños": 1,
+                          "precio": 170000000,
+                          "urbanizacion": "Manrique Central Park"
+                        },
+                        {
+                          "comuna": "Guayabal",
+                          "barrio": "San Pablo",
+                          "area": 95,
+                          "habitaciones": 3,
+                          "baños": 2,
+                          "precio": 270000000,
+                          "urbanizacion": "Pablo Estates"
+                        },
+                        {
+                          "comuna": "La América",
+                          "barrio": "Santa Rita",
+                          "area": 70,
+                          "habitaciones": 2,
+                          "baños": 1,
+                          "precio": 180000000,
+                          "urbanizacion": "Santa Rita Residencial"
+                        },
+                        {
+                          "comuna": "Buenos Aires",
+                          "barrio": "La Pradera",
+                          "area": 100,
+                          "habitaciones": 4,
+                          "baños": 3,
+                          "precio": 320000000,
+                          "urbanizacion": "Pradera del Sur"
+                        },
+                        {
+                          "comuna": "Robledo",
+                          "barrio": "San Blas",
+                          "area": 85,
+                          "habitaciones": 3,
+                          "baños": 2,
+                          "precio": 240000000,
+                          "urbanizacion": "San Blas Gardens"
+                        },
+                        {
+                          "comuna": "Castilla",
+                          "barrio": "Doce de Octubre",
+                          "area": 65,
+                          "habitaciones": 2,
+                          "baños": 1,
+                          "precio": 190000000,
+                          "urbanizacion": "Doce de Octubre Residencial"
+                        }
+                      ]
+                      
+                            homes.forEach(function(home) { %>
                           <tr>
-                            <td style="padding-left: 2rem;"><a href="javascript:showPricing(<%=// JSON.stringify(customer) %>)" title="Ver detalle"><%= //customer.name %> </a></td>
-                            <td><%= //customer.phone %></td>
-                            <td>
-                              <span class="badge badge-success badge-lg customer-status" id="customer-status"><%= //customer.status %></span>
-                            </td>
-                            <td class="text-sm">
-                              <div class="dropdown btn-group dropup position-relative">
-                                <button type="button" class="btn btn-sm btn-link dropdown-toggle m-0" data-bs-toggle="dropdown" aria-expanded="false">
-                                  Acciones
-                                </button>
-                                <ul class="dropdown-menu dropdown-menu-right px-2 py-2" aria-labelledby="dropdownMenuButton">
-                                  <li><a class="dropdown-item border-radius-md" href="/purchase">Duplicar</a></li>
-                                  <li><a class="dropdown-item border-radius-md" href="/third-party/customer/<%= //customer.id %>">Editar</a></li>
-                                  <li><a class="dropdown-item border-radius-md" href="/third-party/customers/<%= //customer.id %>" >Eliminar</a></li>
-                                </ul>
-                              </div>
-                            </td>
+                            <td style="padding-left: 2rem;"><%= home.comuna %></td>
+                            <td><%= home.barrio %></td>
+                            <td><%= home.urbanizacion %></td>
+                            <td><%= home.area %></td>
+                            <td><%= home.habitaciones %></td>
+                            <td><%= home.baños %></td>
+                            <td><%= home.precio %></td>
                           </tr>
                           
-                        <% //}); %>
+                        <% }); %>
                         
                         </form>
-                      </tbody> -->
+                      </tbody> 
                       
                     </table>
                     <div class="container-modal">
