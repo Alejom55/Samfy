@@ -35,20 +35,44 @@ export class ManageAccount {
     }
     catch (error) {
       console.error(error.message);
+      console.error(error.code);
       // Mostrar alerta de error de registro
-      alert("Error al registrar: " + error.message);
+      if (error.code === 'auth/email-already-in-use') {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Usuario ya registrado',
+        })
+      }else if (error.code === 'auth/weak-password'){
+        Swal.fire({
+          icon: 'error',
+          title: 'Contraseña debil',
+          text: 'La contraseña debe tener por lo menos 6 caracteres',
+        })
+      }else if (error.code){
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Algo salio mal',
+        })
+      }
     };
   }
 
   async authenticate(email, password) {
     try {
-      await signInWithEmailAndPassword(auth, email, password)
+      const userCredencials = await signInWithEmailAndPassword(auth, email, password)
       window.location.href = "/";
 
     } catch (error) {
-      console.error(error.message);
       // Mostrar alerta de error de inicio de sesión
-      alert("Error al iniciar sesión: " + error.message);
+      if(error.code === 'auth/invalid-login-credentials'){
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Usuario o contraseña incorrectos',
+        })
+      }
     };
   }
 
