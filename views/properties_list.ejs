@@ -394,8 +394,7 @@
               <table class="table table-flush" id="datatable-search">
                 <thead class="thead-light">
                   <tr>
-                    <th style="padding-left: 2rem;">Imagen</th>
-                    <th style="padding-left: 0;">Barrio</th>
+                    <th style="padding-left: 2rem;">Barrio</th>
                     <th style="padding-left: 0;">Nombre</th>
                     <th style="padding-left: 0;">Area</th>
                     <th style="padding-left: 0;">Habitaciones</th>
@@ -408,9 +407,6 @@
                   <% apartments.apartamentos.forEach(function(apartment, index) { %>
                     <tr>
                       <td style="padding-left: 2rem;">
-                        <%= apartment.imagen %>
-                      </td>
-                      <td style="padding-left: 20px;">
                         <%= apartment.barrio %>
                       </td>
                       <td>
@@ -422,7 +418,7 @@
                       <td>
                         <%= apartment.habitaciones %>
                       </td>
-                      <td style='justify-content:center'>
+                      <td>
                         <%= apartment.baños %>
                       </td>
                       <td>
@@ -618,9 +614,6 @@
 
     // Filtrar los resultados según los criterios seleccionados
     const resultadosFiltrados = apartments.apartamentos.filter(apartment => {
-      console.log(apartment.precio)
-      console.log(parseFloat(apartment.precio))
-      console.log(parseFloat(precioMinimo))
       return (
         (barrio === '' || apartment.barrio === barrio) &&
         (habitaciones === '' || apartment.habitaciones.toString() === habitaciones) &&
@@ -662,8 +655,7 @@
       // Renderizar cada fila con los resultados filtrados
       tbody.innerHTML += `
       <tr>
-        <td style="padding-left: 2rem;">${apartment.foto}</td>
-        <td>${apartment.barrio}</td>
+        <td style="padding-left: 2rem;">${apartment.barrio}</td>
         <td>${apartment.dueño}</td>
         <td>${apartment.area_m2}</td>
         <td>${apartment.habitaciones}</td>
