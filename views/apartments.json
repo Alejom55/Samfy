@@ -1,0 +1,204 @@
+{
+    "apartamentos": [
+        {
+            "barrio": "Manrique",
+            "dueño": "Ricardo Gutierrez",
+            "area_m2": 95,
+            "habitaciones": 3,
+            "baños": 2,
+            "negociable": true,
+            "precio": 170000000,
+            "foto": "https://ejemplo.com/foto41.jpg"
+        },
+        {
+            "barrio": "El Poblado",
+            "dueño": "Martha Restrepo",
+            "area_m2": 100,
+            "habitaciones": 2,
+            "baños": 2,
+            "negociable": false,
+            "precio": 200000000,
+            "foto": "https://ejemplo.com/foto42.jpg"
+        },
+        {
+            "barrio": "Laureles",
+            "dueño": "Andres Rodriguez",
+            "area_m2": 120,
+            "habitaciones": 4,
+            "baños": 3,
+            "negociable": true,
+            "precio": 300000000,
+            "foto": "https://ejemplo.com/foto43.jpg"
+        },
+        {
+            "barrio": "Itagüí",
+            "dueño": "Lorena Mesa",
+            "area_m2": 85,
+            "habitaciones": 2,
+            "baños": 1,
+            "negociable": false,
+            "precio": 130000000,
+            "foto": "https://ejemplo.com/foto44.jpg"
+        },
+        {
+            "barrio": "Sabaneta",
+            "dueño": "Carlos Vargas",
+            "area_m2": 110,
+            "habitaciones": 3,
+            "baños": 2,
+            "negociable": true,
+            "precio": 180000000,
+            "foto": "https://ejemplo.com/foto45.jpg"
+        },
+        {
+            "barrio": "Bello",
+            "dueño": "Isabella Salazar",
+            "area_m2": 95,
+            "habitaciones": 2,
+            "baños": 2,
+            "negociable": false,
+            "precio": 160000000,
+            "foto": "https://ejemplo.com/foto46.jpg"
+        },
+        {
+            "barrio": "Caldas",
+            "dueño": "Juan Torres",
+            "area_m2": 80,
+            "habitaciones": 2,
+            "baños": 1,
+            "negociable": true,
+            "precio": 120000000,
+            "foto": "https://ejemplo.com/foto47.jpg"
+        },
+        {
+            "barrio": "Rionegro",
+            "dueño": "Laura Gomez",
+            "area_m2": 100,
+            "habitaciones": 3,
+            "baños": 2,
+            "negociable": false,
+            "precio": 190000000,
+            "foto": "https://ejemplo.com/foto48.jpg"
+        },
+        {
+            "barrio": "La Estrella",
+            "dueño": "Mateo Estrada",
+            "area_m2": 110,
+            "habitaciones": 4,
+            "baños": 3,
+            "negociable": true,
+            "precio": 220000000,
+            "foto": "https://ejemplo.com/foto49.jpg"
+        },
+        {
+            "barrio": "Guayabal",
+            "dueño": "Camila Restrepo",
+            "area_m2": 75,
+            "habitaciones": 2,
+            "baños": 1,
+            "negociable": false,
+            "precio": 140000000,
+            "foto": "https://ejemplo.com/foto50.jpg"
+        },
+        {
+            "barrio": "La América",
+            "dueño": "Juan Perez",
+            "area_m2": 75,
+            "habitaciones": 3,
+            "baños": 2,
+            "negociable": true,
+            "precio": 150000000,
+            "foto": "https://ejemplo.com/foto31.jpg"
+        },
+        {
+            "barrio": "Laureles",
+            "dueño": "Maria Rodriguez",
+            "area_m2": 90,
+            "habitaciones": 2,
+            "baños": 1,
+            "negociable": false,
+            "precio": 120000000,
+            "foto": "https://ejemplo.com/foto32.jpg"
+        },
+        {
+            "barrio": "Belén",
+            "dueño": "Carlos Gomez",
+            "area_m2": 110,
+            "habitaciones": 4,
+            "baños": 3,
+            "negociable": true,
+            "precio": 200000000,
+            "foto": "https://ejemplo.com/foto33.jpg"
+        },
+        {
+            "barrio": "El Poblado",
+            "dueño": "Ana Martinez",
+            "area_m2": 80,
+            "habitaciones": 2,
+            "baños": 2,
+            "negociable": false,
+            "precio": 130000000,
+            "foto": "https://ejemplo.com/foto34.jpg"
+        },
+        {
+            "barrio": "Castilla",
+            "dueño": "Luis Hernandez",
+            "area_m2": 95,
+            "habitaciones": 3,
+            "baños": 2,
+            "negociable": true,
+            "precio": 180000000,
+            "foto": "https://ejemplo.com/foto35.jpg"
+        },
+        {
+            "barrio": "Villa Hermosa",
+            "dueño": "Sofia Ramirez",
+            "area_m2": 120,
+            "habitaciones": 4,
+            "baños": 3,
+            "negociable": false,
+            "precio": 220000000,
+            "foto": "https://ejemplo.com/foto36.jpg"
+        },
+        {
+            "barrio": "Santa Cruz",
+            "dueño": "Eduardo Castro",
+            "area_m2": 85,
+            "habitaciones": 2,
+            "baños": 2,
+            "negociable": true,
+            "precio": 160000000,
+            "foto": "https://ejemplo.com/foto37.jpg"
+        },
+        {
+            "barrio": "Doce de Octubre",
+            "dueño": "Laura Torres",
+            "area_m2": 100,
+            "habitaciones": 3,
+            "baños": 2,
+            "negociable": false,
+            "precio": 190000000,
+            "foto": "https://ejemplo.com/foto38.jpg"
+        },
+        {
+            "barrio": "Conquistadores",
+            "dueño": "Javier Fernandez",
+            "area_m2": 110,
+            "habitaciones": 4,
+            "baños": 3,
+            "negociable": true,
+            "precio": 210000000,
+            "foto": "https://ejemplo.com/foto39.jpg"
+        },
+        {
+            "barrio": "Robledo",
+            "dueño": "Isabel Garcia",
+            "area_m2": 75,
+            "habitaciones": 2,
+            "baños": 1,
+            "negociable": false,
+            "precio": 140000000,
+            "foto": "https://ejemplo.com/foto40.jpg"
+        }
+    ]
+}
