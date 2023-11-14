@@ -1,1 +1,12 @@
-{"juan@gmail.com":{"name":"juan aguirre","password":"123","plan":"Gratis"},"sobrenic2@gmail.com":{"name":"trinidad","password":"1234","plan":"free"}}
+{
+  "juan@gmail.com": {
+    "name": "juan aguirre",
+    "password": "123",
+    "plan": "free"
+  },
+  "sobrenic2@gmail.com": {
+    "name": "trinidad",
+    "password": "1234",
+    "plan": "Elite"
+  }
+}

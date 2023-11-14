@@ -3,18 +3,33 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var app = express();
+const session = require('express-session');
 
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+app.use(session({
+  secret: 'miSecreto',
+  resave: false,
+  saveUninitialized: true
+}));
+const checkSession = (req, res, next) => {
 
+  if (req.session.user) {
+    res.locals.isLoggedIn = true;
+  } else {
+    res.locals.isLoggedIn = false;
+  }
+  next();
+};
+app.use(checkSession);
 
 app.use(logger('dev'));
 app.use(express.json());

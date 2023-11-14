@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+</head>
+<body>
+  <h1>Bienvenido, <%= username %></h1>
+
+  <p>Tu nivel de suscripción actual es: <%= currentSubscription %></p>
+
+  <h2>Mejora tu suscripción</h2>
+  <form action="/upgrade" method="post">
+    <button type="submit" name="upgrade" value="Elite">Mejorar a Elite</button>
+    <button type="submit" name="upgrade" value="Premium">Mejorar a Premium</button>
+  </form>
+
+  <!-- Otro contenido de la página -->
+
+</body>
+</html>
