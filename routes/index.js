@@ -26,13 +26,13 @@ const checkSubscriptionAccess = (requiredSubscriptionLevel) => {
 
       // Verificar el nivel de suscripción
       if (currentUser && isSubscriptionSufficient(currentUser.plan, requiredSubscriptionLevel)) {
-        res.locals.username = currentUser.name; // Establecer el nombre de usuario para la vista
-        next(); // Permitir acceso al nivel de suscripción requerido o superior
+        res.locals.username = currentUser.name;  
+        next(); 
       } else {
-        res.redirect('/upgrade'); // Redirigir a una página de actualización si no tienen una suscripción válida
+        res.redirect('/upgrade');
       }
     } else {
-      res.locals.username = null; // No hay usuario, establecer a null
+      res.locals.username = null; 
       res.redirect('/login');
     }
   };
