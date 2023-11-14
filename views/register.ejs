@@ -46,21 +46,34 @@
                                     <p class="mb-0">Solo necesitas tu correo y una contraseña</p>
                                 </div>
                                 <div class="card-body pb-3">
-                                    <form role="form" id="formulario-register">
+                                    <form role="form" id="formulario-register" action="/register" method="POST">
                                         <label>Nombre</label>
                                         <div class="mb-3">
                                             <input type="text" class="form-control" placeholder="Name" aria-label="Name"
-                                                id="Name">
+                                                id="Name" name="name">
                                         </div>
                                         <label>Email</label>
                                         <div class="mb-3">
                                             <input type="email" class="form-control" placeholder="Email"
-                                                aria-label="Email" id="Email">
+                                                aria-label="Email" name="email" id="Email">
                                         </div>
                                         <label>Contraseña</label>
                                         <div class="mb-3">
                                             <input type="password" class="form-control" placeholder="Password"
-                                                aria-label="Password" id="Password">
+                                                aria-label="Password" name="password" id="Password">
+                                        </div>
+                                        <label>Confirmar contraseña</label>
+                                        <div class="mb-3">
+                                            <input type="password" class="form-control" placeholder="Confirm Password"
+                                                aria-label="Password">
+                                        </div>
+                                        <label for="">Plan</label>
+                                        <div class="mb-3">
+                                            <select name="plan" id="plan" class="form-control">
+                                                <option value="free">Gratis - $0</option>
+                                                <option value="Elite">Elite - $1.99</option>
+                                                <option value="Premium">Premium - $4.99</option>
+                                            </select>
                                         </div>
                                         <div class="form-check form-check-info text-left">
                                             <input class="form-check-input" type="checkbox" value="false"
@@ -72,7 +85,7 @@
                                         </div>
                                         <div class="text-center">
                                             <button type="submit" class="btn bg-gradient-primary w-100 mt-4 mb-0"
-                                                onclick="">Sign up</button>
+                                                onclick="">Registrar</button>
                                         </div>
                                     </form>
                                 </div>
@@ -156,6 +169,7 @@
     <script src="/js/core/bootstrap.min.js"></script>
     <script src="/js/plugins/perfect-scrollbar.min.js"></script>
     <script src="/js/plugins/smooth-scrollbar.min.js"></script>
+
     <!-- Kanban scripts -->
     <script src="/js/plugins/dragula/dragula.min.js"></script>
     <script src="/js/plugins/jkanban/jkanban.js"></script>
@@ -172,10 +186,8 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="/js/soft-ui-dashboard.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <!-- Servicios -->
-    <script type="module" src="/js/services/firebase-auth.js"></script>
-    <script type="module" src="/js/services/register.js"></script>
+    <script>
+    </script>
 
 </body>
 

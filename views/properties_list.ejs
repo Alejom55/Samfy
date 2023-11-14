@@ -313,16 +313,18 @@
                   Encuentre aquí el listado de los inmuebles disponibles.
                 </p>
               </div>
-              <div class="col-lg-4  d-flex flex-column justify-content-end">
-
+              <div class="col-sm-2  d-flex flex-column justify-content-end">
                 <a href="/add_property" class="btn btn-icon bg-gradient-primary">
                   Nuevo
                 </a>
               </div>
+              <div class="col-sm-2  d-flex flex-column justify-content-end">
+                <button class="btn btn-icon bg-gradient-primary" onclick="showFilter()" id="btnFilter">Filtrar</button>
+              </div>
             </div>
 
 
-            <div class="card px-4 mb-3">
+            <div class="card px-4 mb-3" id="filter" style="display: none;">
               <div class="row">
                 <div class="col-4">
                   <label for="selectBarrio">Filtrar por Barrio:</label>
@@ -425,9 +427,7 @@
                         <%= apartment.negociable ? 'Sí' : 'No' %>
                       </td>
                       <td>
-                      <td>
                         <%= apartment.precio.toLocaleString('es-CO', { style: 'currency' , currency: 'COP' }) %>
-                      </td>
                       </td>
                     </tr>
                     <% }); %>
@@ -591,6 +591,7 @@
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <!-- Servicios -->
   <script type="module" src="/js/services/firebase-auth.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js" integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script type="module" src="/js/services/login.js"></script>
 
 
@@ -600,6 +601,17 @@
 </body>
 <script>
   const apartments = JSON.parse('<%- unescape(JSON.stringify(apartments)) %>');
+
+  function showFilter() {
+    const filter = document.getElementById('filter');
+    if (filter.style.display === 'none') {
+      $("#filter").fadeIn()
+      $("#btnFilter").text('Ocultar Filtros')
+    } else {
+      $("#filter").fadeOut()
+      $("#btnFilter").text('Filtrar')
+    }
+  }
 
   function aceptarFiltros() {
     // Obtener valores seleccionados

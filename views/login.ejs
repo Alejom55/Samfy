@@ -48,15 +48,15 @@
                   <p class="mb-0">Ingresa tu email y contraseña para iniciar sesión</p>
                 </div>
                 <div class="card-body">
-                  <form role="form" class="text-start" id="formulario-sesion">
+                  <form role="form" class="text-start" id="formulario-sesion" action="/login" method="post">
                     <label>Email</label>
                     <div class="mb-3">
-                      <input type="email" class="form-control" placeholder="Email" aria-label="Email" id="Email">
+                      <input type="email" name="email" class="form-control" placeholder="Email" aria-label="Email" id="Email">
                     </div>
                     <label>Contraseña</label>
                     <div class="mb-3">
                       <input type="password" class="form-control" placeholder="Password" aria-label="Password"
-                        id="Password">
+                        id="Password" name="password">
                     </div>
                     <div class="form-check form-switch">
                       <label class="switch">
@@ -165,10 +165,6 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="/js/soft-ui-dashboard.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-  <!-- Servicios -->
-  <script type="module" src="/js/services/firebase-auth.js"></script>
-  <script type="module" src="/js/services/login.js"></script>
 </body>
 
 </html>
